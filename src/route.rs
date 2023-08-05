@@ -1,12 +1,13 @@
+use strum::{Display, EnumIter};
 use yew::Html;
-use yew_router::prelude::*;
+use yew_router::Routable;
 
 use crate::pages::{
     about::about, archives::archives, categories::categories, home::home, tags::tags,
     _404::not_found,
 };
 
-#[derive(Clone, Routable, PartialEq)]
+#[derive(Display, Clone, Routable, PartialEq, EnumIter)]
 pub enum Route {
     #[at("/")]
     Home,

@@ -1,7 +1,7 @@
 use yew::{function_component, html, Html};
 
 use crate::components::{
-    navigator::{LinkProps, Navigator},
+    navigator::Navigator,
     profile::{Profile, Profiler},
     social_list::{SocialProps, Socials},
 };
@@ -12,23 +12,6 @@ pub fn sidebar() -> Html {
         name: "lufe".to_string(),
         subtitle: "lufe site".to_string(),
     };
-    let links = vec![
-        LinkProps {
-            s: "home".to_string(),
-        },
-        LinkProps {
-            s: "categories".to_string(),
-        },
-        LinkProps {
-            s: "tags".to_string(),
-        },
-        LinkProps {
-            s: "archives".to_string(),
-        },
-        LinkProps {
-            s: "about".to_string(),
-        },
-    ];
     let socials = vec![
         SocialProps {
             url: url::Url::parse("https://github.com/1uf3").unwrap(),
@@ -40,7 +23,7 @@ pub fn sidebar() -> Html {
     html! {
     <div id="sidebar" class="d-flex flex-column align-items-end">
         <Profiler profile={profile} />
-        <Navigator links={links} />
+        <Navigator />
         <Socials socials={socials} />
     </div>
     }

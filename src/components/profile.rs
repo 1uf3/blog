@@ -16,7 +16,9 @@ pub fn profile(ProfileProps { profile }: &ProfileProps) -> Html {
     let profile = profile.clone();
     html! {
         <div class="profile-wrapper">
-            <a href="/" id="avatar" class="rounded-circle"></a>
+            <a href="/" id="avatar" class="rounded-circle">
+                <img src={"public/avator.png"} width="112" height="112" alt="avator" onrror="this.stype.display=none"/>
+            </a>
             <div class="site-title">
                 <a href="/">{profile.name}</a>
             </div>
